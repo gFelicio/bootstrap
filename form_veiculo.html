@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	<style>
+		* {
+			font-family: sans-serif !important;
+		}
+		html, body {
+			min-height: 100%;
+		}
+		.geral {
+			padding-top: 25px;
+			background-color: #f6f9fb;
+			height: 100%;
+		}
+	</style>
+
+    <title>
+        Formulário - Veículo
+    </title>
+  </head>
+  <body>
+    <h1 class="col-lg-12 text-center pt-3 mb-0 pb-3">
+        Cadastro de Veículo - Brasil
+    </h1>
+
+    <div class="geral container-fluid" id="geral">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="nome_dono">
+                  Nome do(a) Dono(a)
+                </label>
+
+                <input type="text"
+					class="form-control"
+					id="nome_dono"
+                    placeholder="Proprietário(a) do Veículo">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="cpf_dono">
+                  CPF do(a) Dono(a)
+                </label>
+
+                <input type="text"
+					class="form-control"
+					id="cpf_dono"
+                    placeholder="CPF do(a)Proprietário(a) do Veículo">
+            </div>          	
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="modelo_veiculo">
+                  Modelo do Veículo
+                </label>
+
+                <input type="text"
+                  class="form-control"
+                  id="modelo_veiculo"
+                  placeholder="Uno, Gol, Fox">
+            </div>
+
+            <div class="form-group col-md-2">
+				<label for="data_fabricacao">
+					Ano de Fabricação
+				</label>
+
+				<input type="text"
+					class="form-control"
+					id="data_fabricacao"
+                    placeholder="Ex.: 1999">
+        	</div>
+
+            <div class="form-group col-md-2 offset-md-0">
+				<label for="pais">
+                	País
+              	</label>
+
+              	<input type="text"
+                	class="form-control"
+                	id="pais"
+                    value="Brasil"
+                    disabled>
+			</div>
+
+            <div class="form-group col-md-4">
+				<label for="estado">
+                	Estado de Registro do Veículo
+              	</label>
+
+				<select name="estado" id="estado"
+					class="form-control">
+				  	<option value="0"
+					  selected disabled>
+				  		Escolha
+					</option>
+				</select>
+			</div>
+        </div>
+
+		<div class="form-row">
+			<div class="form-group col-md-3">
+				<label for="chassi">
+                	Chassi do Veículo
+              	</label>
+
+              	<input type="text"
+                	class="form-control"
+                	id="chassi"
+                    placeholder="Número do chassi">
+			</div>			
+
+			<div class="form-group col-md-2">
+				<label for="placa_veiculo">
+                	Placa do Veículo
+              	</label>
+
+              	<input type="text"
+                	class="form-control"
+                	id="placa_veiculo"
+                    placeholder="ABC1234/ABC1D23">
+			</div>
+
+            <div class="form-group col-md-2">
+				<label for="cor_veiculo">
+                	Cor do Veículo
+              	</label>
+
+              	<input type="text"
+                	class="form-control"
+                	id="cor_veiculo"
+                    placeholder="Prata">
+			</div>
+
+			<div class="form-group col-md-5">
+				<label for="documento_quitado">
+                	Documento Quitado no Ano Corrente
+				</label>
+				<input type="checkbox"
+					class="form-control"
+					id="documento_quitado"
+					value="1">
+			</div>
+		</div>
+
+		
+
+		<div class="form-row">
+			<button class="btn btn-primary pull-right">
+				Confirmar
+			</button>
+		</div>
+    </div>
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+	<script>
+		$(document).ready(function () {
+			let option = '<option/>';
+			let state_select = $('#estado');
+			populate(state_select);
+
+			function populate(selector) {
+				$(selector)
+					.append($(option, { value : 'AC' }).text('Acre'))
+                    .append($(option, { value : 'AL' }).text('Alagoas'))
+					.append($(option, { value : 'AP' }).text('Amapá'))
+                    .append($(option, { value : 'AM' }).text('Amazonas'))
+                    .append($(option, { value : 'BA' }).text('Bahia'))
+                    .append($(option, { value : 'CE' }).text('Ceará'))
+                    .append($(option, { value : 'ES' }).text('Espírito Santo'))
+                    .append($(option, { value : 'GO' }).text('Goiás'))
+                    .append($(option, { value : 'MA' }).text('Maranhão'))
+                    .append($(option, { value : 'MT' }).text('Mato Grosso'))
+                    .append($(option, { value : 'MS' }).text('Mato Grosso do Sul'))
+                    .append($(option, { value : 'MG' }).text('Minas Gerais'))
+                    .append($(option, { value : 'PA' }).text('Pará'))
+                    .append($(option, { value : 'PB' }).text('Paraíba'))
+                    .append($(option, { value : 'PR' }).text('Paraná'))
+                    .append($(option, { value : 'PE' }).text('Pernambuco'))
+                    .append($(option, { value : 'PI' }).text('Piauí'))
+					.append($(option, { value : 'RJ' }).text('Rio de Janeiro'))
+                    .append($(option, { value : 'RN' }).text('Rio Grande do Norte'))
+                    .append($(option, { value : 'RS' }).text('Rio Grande do Sul'))
+                    .append($(option, { value : 'RO' }).text('Rondônia'))
+                    .append($(option, { value : 'RR' }).text('Roraima'))
+                    .append($(option, { value : 'SC' }).text('Santa Catarina'))
+					.append($(option, { value : 'SP' }).text('São Paulo'))
+                    .append($(option, { value : 'SE' }).text('Sergipe'))
+                    .append($(option, { value : 'TO' }).text('Tocantins'))
+                    .append($(option, { value : 'DF' }).text('Distrito Federal'))
+			}
+		});
+	</script>
+  </body>
+</html>
