@@ -11,7 +11,3 @@ console.log(JSON.stringify(mineiro), JSON.stringify(soja));
 console.log('Nome: ', mineiro.nome, ', Idade: ', mineiro.idade);
 console.log('Valor', calculos.valor(valor_produto))
 console.log('resultado da soma', calculos.adicionar(valor_produto));
-
-
-
-
